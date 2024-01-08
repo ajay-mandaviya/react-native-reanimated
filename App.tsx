@@ -9,7 +9,8 @@ import {
   ScrollSlider,
   ToggleTheme,
   SwipeDelete,
-  FList
+  FList,
+  SLideCount
 } from "./Screens";
 
 const Stack = createNativeStackNavigator();
@@ -19,7 +20,7 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="FList"
+          initialRouteName="SLideCount"
           screenOptions={{
             headerShown: false,
           }}
@@ -31,6 +32,7 @@ export default function App() {
           <Stack.Screen name="ColorPicker" component={ColorPicker} />
           <Stack.Screen name="SwipeDelete" component={SwipeDelete} />
           <Stack.Screen name="FList" component={FList} />
+          <Stack.Screen name="SLideCount" component={SLideCount} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
