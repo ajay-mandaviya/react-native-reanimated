@@ -10,7 +10,8 @@ import {
   ToggleTheme,
   SwipeDelete,
   FList,
-  SLideCount
+  SLideCount,
+  AnimatedSkeleton
 } from "./Screens";
 
 const Stack = createNativeStackNavigator();
@@ -20,7 +21,7 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="SLideCount"
+          initialRouteName="AnimatedSkeleton"
           screenOptions={{
             headerShown: false,
           }}
@@ -33,6 +34,7 @@ export default function App() {
           <Stack.Screen name="SwipeDelete" component={SwipeDelete} />
           <Stack.Screen name="FList" component={FList} />
           <Stack.Screen name="SLideCount" component={SLideCount} />
+          <Stack.Screen name="AnimatedSkeleton" component={AnimatedSkeleton} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
