@@ -68,7 +68,7 @@ const ClockSqure: React.FC<Props> = ({ index, progress }) => {
   });
   const animatedStyle = useAnimatedStyle(() => {
     return {
-      transform: [{ rotate: `${rotate}rad` }, { translateY: translateY }],
+      transform: [{ rotate: `${rotate}rad` }, { translateY: translateY.value }],
     };
   });
 

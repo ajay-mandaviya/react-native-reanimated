@@ -13,7 +13,7 @@ import {
   SLideCount,
   AnimatedSkeleton
 } from "./Screens";
-import { Clock } from "./components";
+import { Clock, Segmented } from "./components";
 
 const Stack = createNativeStackNavigator();
 
@@ -35,7 +35,7 @@ export default function App() {
           <Stack.Screen name="SwipeDelete" component={SwipeDelete} />
           <Stack.Screen name="FList" component={FList} />
           <Stack.Screen name="SLideCount" component={SLideCount} />
-          <Stack.Screen name="AnimatedSkeleton" component={Clock} />
+          <Stack.Screen name="AnimatedSkeleton" component={Segmented} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
