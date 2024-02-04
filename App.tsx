@@ -11,8 +11,11 @@ import {
   SwipeDelete,
   FList,
   SLideCount,
-  AnimatedSkeleton
+  AnimatedSkeleton,
+  ScrollIndex,
+  MotiCricle
 } from "./Screens";
+
 import { Clock, Segmented } from "./components";
 
 const Stack = createNativeStackNavigator();
@@ -22,7 +25,7 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="AnimatedSkeleton"
+          initialRouteName="ScrollIndex"
           screenOptions={{
             headerShown: false,
           }}
@@ -36,6 +39,7 @@ export default function App() {
           <Stack.Screen name="FList" component={FList} />
           <Stack.Screen name="SLideCount" component={SLideCount} />
           <Stack.Screen name="AnimatedSkeleton" component={Segmented} />
+          <Stack.Screen name="ScrollIndex" component={MotiCricle} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
