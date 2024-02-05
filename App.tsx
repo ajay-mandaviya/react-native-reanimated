@@ -13,7 +13,8 @@ import {
   SLideCount,
   AnimatedSkeleton,
   ScrollIndex,
-  MotiCricle
+  MotiCricle,
+  FlatListGallery
 } from "./Screens";
 
 import { Clock, Segmented } from "./components";
@@ -39,7 +40,7 @@ export default function App() {
           <Stack.Screen name="FList" component={FList} />
           <Stack.Screen name="SLideCount" component={SLideCount} />
           <Stack.Screen name="AnimatedSkeleton" component={Segmented} />
-          <Stack.Screen name="ScrollIndex" component={MotiCricle} />
+          <Stack.Screen name="ScrollIndex" component={FlatListGallery} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
