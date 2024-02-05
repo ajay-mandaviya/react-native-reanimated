@@ -62,6 +62,13 @@ const FlatListGallery = () => {
       });
     }
   };
+  const IMAGE_WIDTH = React.useMemo(() => (
+    width * .7
+  ), [width]);
+
+  const IMAGE_HEIGHT = React.useMemo(() => (
+    IMAGE_WIDTH * 1.54
+  ), [IMAGE_WIDTH]);
 
   const carasoul = true;
 
@@ -71,27 +78,6 @@ const FlatListGallery = () => {
       {carasoul ? (
         <>
           <View style={StyleSheet.absoluteFillObject}>
-            {data.map((image: string, index: number) => {
-              const inputRange = [
-                (index - 1) * width,
-                index * width,
-                (index + 1) * width,
-              ];
-
-              const opacity = scrollX.interpolate({
-                 inputRange,
-                 outputRange : [0, 1 ,0]
-              })
-
-              return (
-                <Animated.Image
-                  key={`image~${index}`}
-                  source={{ uri: image }}
-                  style={[StyleSheet.absoluteFillObject , { opacity }]}
-                  blurRadius={60}
-                />
-              );
-            })}
             <FlatList
               data={data}
               keyExtractor={(_, index) => index.toString()}
@@ -101,26 +87,45 @@ const FlatListGallery = () => {
                 [{ nativeEvent: { contentOffset: { x: scrollX } } }],
                 { useNativeDriver: false }
               )}
-              renderItem={({ item }) => {
+              renderItem={({item, index}) => {
+
+                const opacity = scrollX.interpolate({
+                  inputRange: [
+                    (index - 1) * width,
+                    index * width,
+                    (index + 1) * width
+                  ],
+                  outputRange: [0, 1, 0],
+                })
+      
                 return (
-                  <View
-                    style={{
+                  <>
+                    <View style={StyleSheet.absoluteFillObject}>
+                      <Animated.Image
+                        blurRadius={25}
+                        source={{uri: item}}
+                        style={[
+                          StyleSheet.absoluteFillObject,
+                          {opacity}
+                        ]} />
+                    </View>
+                    <View style={{
                       width,
-                      justifyContent: "center",
                       alignItems: "center",
-                    }}
-                  >
-                    <Image
-                      source={{ uri: item }}
-                      style={{
-                        width: imageW,
-                        height: imageH,
-                        resizeMode: "cover",
-                        borderRadius: 16,
-                      }}
-                    />
-                  </View>
-                );
+                      justifyContent: "center"
+                    }}>
+                      <Animated.Image
+                        style={{
+                          width: IMAGE_WIDTH,
+                          height: IMAGE_HEIGHT,
+                          resizeMode: 'cover',
+                          borderRadius: 16,
+                          opacity
+                        }}
+                        source={{uri: item}} />
+                    </View>
+                  </>
+                )
               }}
             />
           </View>
