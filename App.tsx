@@ -18,6 +18,7 @@ import {
 } from "./Screens";
 
 import { Clock, Segmented } from "./components";
+import FlatListAnimatedtabs from "./Screens/ListAnimation/FlatListAnimatedtabs";
 
 const Stack = createNativeStackNavigator();
 
@@ -40,7 +41,7 @@ export default function App() {
           <Stack.Screen name="FList" component={FList} />
           <Stack.Screen name="SLideCount" component={SLideCount} />
           <Stack.Screen name="AnimatedSkeleton" component={Segmented} />
-          <Stack.Screen name="ScrollIndex" component={FlatListGallery} />
+          <Stack.Screen name="ScrollIndex" component={FlatListAnimatedtabs} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
