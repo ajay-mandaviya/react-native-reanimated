@@ -14,11 +14,14 @@ import {
   AnimatedSkeleton,
   ScrollIndex,
   MotiCricle,
-  FlatListGallery
+  FlatListGallery,
+  EasyAccordian,
+  ParallaxCarousel
 } from "./Screens";
 
 import { Clock, Segmented } from "./components";
 import FlatListAnimatedtabs from "./Screens/ListAnimation/FlatListAnimatedtabs";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -27,7 +30,7 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="ScrollIndex"
+          initialRouteName="ParallaxCarousel"
           screenOptions={{
             headerShown: false,
           }}
@@ -42,6 +45,8 @@ export default function App() {
           <Stack.Screen name="SLideCount" component={SLideCount} />
           <Stack.Screen name="AnimatedSkeleton" component={Segmented} />
           <Stack.Screen name="ScrollIndex" component={FlatListAnimatedtabs} />
+          <Stack.Screen name="EasyAccordian" component={EasyAccordian} />
+          <Stack.Screen  name="ParallaxCarousel"   component={ParallaxCarousel}  />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
