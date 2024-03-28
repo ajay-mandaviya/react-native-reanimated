@@ -16,12 +16,14 @@ import {
   MotiCricle,
   FlatListGallery,
   EasyAccordian,
-  ParallaxCarousel
+  ParallaxCarousel,
+  CounterScrollList,
+  StickyFooter,
+  FlatListCarousel,
+  TransitionRoute,
 } from "./Screens";
-
 import { Clock, Segmented } from "./components";
 import FlatListAnimatedtabs from "./Screens/ListAnimation/FlatListAnimatedtabs";
-
 
 const Stack = createNativeStackNavigator();
 
@@ -30,7 +32,7 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="ParallaxCarousel"
+          initialRouteName="FlatListCarousel"
           screenOptions={{
             headerShown: false,
           }}
@@ -46,7 +48,14 @@ export default function App() {
           <Stack.Screen name="AnimatedSkeleton" component={Segmented} />
           <Stack.Screen name="ScrollIndex" component={FlatListAnimatedtabs} />
           <Stack.Screen name="EasyAccordian" component={EasyAccordian} />
-          <Stack.Screen  name="ParallaxCarousel"   component={ParallaxCarousel}  />
+          <Stack.Screen name="ParallaxCarousel" component={ParallaxCarousel} />
+          <Stack.Screen
+            name="CounterScrollList"
+            component={CounterScrollList}
+          />
+          <Stack.Screen name="StickyFooter" component={StickyFooter} />
+          <Stack.Screen name="FlatListCarousel" component={FlatListCarousel} />
+          <Stack.Screen name="TransitionRoute" component={TransitionRoute} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>

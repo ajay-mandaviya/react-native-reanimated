@@ -1,3 +1,5 @@
 export { default as ScrollIndex } from './ScrollIndex'
 export { default as FlatListGallery } from './FlatListGallery'
 export { default as ParallaxCarousel } from './ParallaxCarousel'
+export { default as CounterScrollList } from './CounterScrollList'
+export {  default as FlatListCarousel } from './FlatListCarousel'
